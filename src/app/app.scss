@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+.app-container{
+    background-color: #8d8f92;
+    margin:0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-heading{
+    text-align: center;
+    color:hwb(264 95% 3%);
+    font-size:36px;
+}
+.buttons-container {
+  display: flex;
+  justify-content: center;   // Center horizontally
+  align-items: center;
+  gap: 16px;                 // Space between buttons
+  margin-top: 24px;
+}
+
+.Auto-Btn {
+  background-color: #2563eb;     // Blue professional button
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+}

@@ -1,0 +1,118 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: #535f6b;
+}
+
+.traffic-signal-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: linear-gradient(180deg, #071028, #0b1320);
+  padding: 50px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(3, 10, 18, 0.6);
+  margin-bottom:10px;
+}
+
+.manual-change-btn{
+  background-color:#2563eb;   // Dark Blue-Gray - professional
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  margin: 10px;  
+  margin-bottom:10px;              // Space between buttons (optional)
+  transition: background 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 3px 8px rgba(32, 69, 251, 0.882);
+
+}
+.light {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+
+.light:not(.active) {
+  opacity: 0.3;
+}
+
+
+/* Default light (OFF state) */
+.light {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2f3340;
+  box-shadow: inset 0 -6px 12px rgba(0, 0, 0, 0.6);
+  transition: background-color 200ms, box-shadow 200ms, transform 150ms;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 35%;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+}
+
+/* Each color ON state */
+.red.active {
+  background: #ff4d4d;
+  box-shadow: 0 0 28px rgba(255, 60, 60, 0.65);
+  transform: translateY(-2px);
+}
+
+.yellow.active {
+  background: #ffd95b;
+  box-shadow: 0 0 24px rgba(255, 220, 90, 0.6);
+  transform: translateY(-2px);
+}
+
+.green.active {
+  background: #53d06a;
+  box-shadow: 0 0 24px rgba(60, 200, 100, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Button styling */
+.btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1e293b;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 160ms;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 360px) {
+  .traffic-signal-box { padding: 16px; }
+  .light { width: 50px; height: 50px; }
+}
