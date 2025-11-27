@@ -1,17 +1,46 @@
-<div>
-<div class="traffic-signal-box">
-  <div class="light red" [class.active]="activeLight === 'red'">
-    <span *ngIf="activeLight === 'red'">{{ countdown }}</span>
+<div class="traffic-signal-container">
+
+  <p
+    *ngIf="mode === 'auto'"
+    [class.green-text]="activeLight === 'green'"
+    [class.yellow-text]="activeLight === 'yellow'"
+    [class.red-text]="activeLight === 'red'"
+  >
+    Remaining-Time : {{ RemainingTime }}
+  </p>
+
+  <div class="signal-wrapper">
+
+    <button
+      class="manual-change-btn"
+      *ngIf="mode === 'manual'"
+      (click)="cycleLightForManual()"
+    >
+      Change
+    </button>
+
+    <div class="traffic-signal-box">
+
+      <!-- RED -->
+      <div class="light red" 
+           [class.active]="activeLight === 'red'">
+        <span *ngIf="activeLight === 'red'">{{ text }}</span>
+      </div>
+
+      <!-- YELLOW -->
+      <div class="light yellow"
+           [class.active]="activeLight === 'yellow'"
+           [class.blink]="mode === 'night' && isBlinking">
+        <span *ngIf="activeLight === 'yellow'">{{ text }}</span>
+      </div> 
+
+      <!-- GREEN -->
+      <div class="light green" 
+           [class.active]="activeLight === 'green'">
+        <span *ngIf="activeLight === 'green'">{{ text }}</span>
+      </div>
+
+    </div>
+
   </div>
-  <div class="light yellow" [class.active]="activeLight === 'yellow'">
-     <span *ngIf="activeLight === 'yellow'">{{ countdown }}</span>
-  </div>
-  <div class="light green" [class.active]="activeLight === 'green'">
-     <span *ngIf="activeLight === 'green'">{{ countdown }}</span>
-  </div>
-</div>
-<div >
-   <!-- This button works only in manual mode -->
-  <button  class="manual-change-btn" *ngIf="mode === 'manual'" (click)=" cycleLightForManual()">Change</button>
- </div>
 </div>

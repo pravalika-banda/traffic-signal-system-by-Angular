@@ -10,7 +10,8 @@ body, html {
 }
 
 .app-container{
-    background-color: #8d8f92;
+  background: linear-gradient(135deg, #1b2735 0%, #090a0f 100%);
+  padding: 20px;
     margin:0px;
     padding: 0;
     box-sizing: border-box;
@@ -50,5 +51,18 @@ body, html {
   &:active {
     transform: translateY(0);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+//Mobile Devices (width < 600px)
+@media (max-width: 600px) {
+  .buttons-container {
+    flex-wrap: wrap;     /* Allow buttons to move to next line */
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .Auto-Btn {
+    width: 45%;          /* 2 buttons in 1 row */
+    text-align: center;
   }
 }

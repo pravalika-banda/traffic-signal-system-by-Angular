@@ -9,9 +9,9 @@ import { TrafficSignal } from './traffic-signal/traffic-signal';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('Traffic-signal');
+  title = 'Traffic-signal';
   // Parent decides mode → this value goes to child
-  trafficMode: 'auto' | 'manual' = 'manual';
+  trafficMode: 'auto' | 'manual'|'night'|'emergency'= 'manual';
 
   // Child → Parent
   currentLight: 'red' | 'yellow' | 'green' = 'red';
@@ -25,6 +25,12 @@ export class App {
 
   enableManualMode() {
     this.trafficMode = 'manual';
+  }
+  enableNightMode(){
+    this.trafficMode='night';
+  }
+  enableEmergencyMode(){
+    this.trafficMode='emergency';
   }
    //  This fixes the error
   onLightChange(light: 'red' | 'yellow' | 'green') {
